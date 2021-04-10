@@ -1,11 +1,17 @@
-import './styles/App.css';
+import React from "react";
+import './styles/App.scss';
+import Navbar from './components/elements/Navbar';
+import Contacts from './components/contacts/Contacts';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Hello React</h1>
-      </header>
+      <Navbar/>
+      <div className="container">
+        <div className="py-3">
+          <Contacts/>
+        </div>
+      </div>
     </div>
   );
 }
