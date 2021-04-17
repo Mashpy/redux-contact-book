@@ -1,18 +1,25 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {useSelector} from "react-redux";
 import Contact from "./Contact";
 
 const Contacts = () => {
+    const [selectAll, setSelectAll] = useState(false);
     const contacts = useSelector((state) => state.contact.contacts);
     return (
         <div>
-            <table class="table shadow">
+            <table className="table shadow">
                 <thead className="bg-danger text-white">
                     <tr>
                     <th scope="col">
                         <div className="custom-control custom-checkbox">
-                            <input type="checkbox" className="custom-control-input" />
-                            <label className="custom-control-label"></label>
+                            <input 
+                            id="selectAll" 
+                            type="checkbox" 
+                            className="custom-control-input"
+                            value={selectAll}
+                            onClick={()=> setSelectAll(!selectAll)}
+                            />
+                            <label htmlFor="selectAll" className="custom-control-label"></label>
                         </div>
                     </th>
                     <th >Name</th>
@@ -24,7 +31,7 @@ const Contacts = () => {
                 <tbody>
                     { 
                         contacts.map((contact) => (
-                            <Contact contact={contact} key={ contact.id }/>
+                            <Contact contact={contact} key={ contact.id } selectAll={selectAll}/>
                         ))}
                 </tbody>
             </table>
