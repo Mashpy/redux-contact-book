@@ -1,8 +1,9 @@
 import React from 'react'
 import Avatar from "react-avatar";
+import { Link } from "react-router-dom";
 
 export const Contact = ({contact}) => {
-    const {name, phone, email} = contact;
+    const {name, phone, email, id} = contact;
     return (
         <tr>
             <th>
@@ -17,12 +18,12 @@ export const Contact = ({contact}) => {
             <td>{phone}</td>
             <td>{email}</td>
             <td className="actions">
-                <a href="#">
+                <Link to={'/contacts/edit/${id}'}>
                     <span className="material-icons mr-2">edit</span>
-                </a>
-                <a href="#">
+                </Link>
+                <Link to="#">
                     <span className="material-icons text-danger">remove_circle</span>
-                </a>
+                </Link>
             </td>
         </tr>
     )
