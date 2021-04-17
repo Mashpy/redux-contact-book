@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {useDispatch} from "react-redux";
-import {addContact} from "../../store";
+import {addContact} from "../../actions/contactAction";
 import shortid from "shortid";
 import {useHistory} from "react-router-dom";
 
