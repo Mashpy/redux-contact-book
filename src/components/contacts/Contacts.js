@@ -18,12 +18,13 @@ const Contacts = () => {
                     <th >Name</th>
                     <th >Phone</th>
                     <th >Email</th>
+                    <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
                     { 
                         contacts.map((contact) => (
-                            <Contacts contact={contact}/>
+                            <Contact contact={contact} key={ contact.id }/>
                         ))}
                 </tbody>
             </table>

@@ -1,6 +1,8 @@
 import React from 'react'
+import Avatar from "react-avatar";
 
-export const Contact = (props) => {
+export const Contact = ({contact}) => {
+    const {name, phone, email} = contact;
     return (
         <tr>
             <th>
@@ -9,9 +11,21 @@ export const Contact = (props) => {
                     <label className="custom-control-label"></label>
                 </div>
             </th>
-            <td>{props.contact.name}</td>
-            <td>{props.contact.phone}</td>
-            <td>{props.contact.email}</td>
+            <td>
+                <Avatar className="mr-2" name={name} size="45" round={true} /> {name}
+            </td>
+            <td>{phone}</td>
+            <td>{email}</td>
+            <td className="actions">
+                <a href="#">
+                    <span className="material-icons mr-2">edit</span>
+                </a>
+                <a href="#">
+                    <span className="material-icons text-danger">remove_circle</span>
+                </a>
+            </td>
         </tr>
     )
 }
+
+export default Contact
