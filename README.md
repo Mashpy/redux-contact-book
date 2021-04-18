@@ -1,12 +1,12 @@
 Contact Book using React and Redux
 ---------------
-How to run:
+### How to run:
 $ git clone https://github.com/Mashpy/redux-contact-book.git
 $ cd redux-contact-book
 $ npm install
 $ npm start
 
-App Preview:
+### App Preview:
 1. Create a contact
 ![alt text](https://github.com/Mashpy/redux-contact-book/blob/master/src/markdown_images/1.png?raw=true)
 
